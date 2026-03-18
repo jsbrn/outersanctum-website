@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function ()
 	{
 		const email = document.getElementById('contact-button');
         const obfuscated = "apogee . sheep ! com";
-        console.log(email, obfuscated)
 		email.setAttribute("href", `mailto:${obfuscated.replace("apogee", "contact").replace(".", "@").replaceAll(" ", "").replace("sheep", "outersanctum").replace("!", ".").replace("com", "ca")}`)
 	}
 

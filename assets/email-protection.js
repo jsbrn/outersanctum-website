@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', function ()
 
 	listener.decode = function ()
 	{
-		const email = document.getElementById('contact-button');
+
+		const button = document.getElementById('email-address');
         const obfuscated = "apogee . sheep ! com";
-		email.setAttribute("href", `mailto:${obfuscated.replace("apogee", "contact").replace(".", "@").replaceAll(" ", "").replace("sheep", "outersanctum").replace("!", ".").replace("com", "ca")}`)
+        const revealed = obfuscated.replace("apogee", "contact").replace(".", "@").replaceAll(" ", "").replace("sheep", "outersanctum").replace("!", ".").replace("com", "ca");
+		button.setAttribute("href", `mailto:${revealed}`);
+        button.innerText = revealed
+        console.log(button, obfuscated, revealed)
 	}
 
 	listener.on();
@@ -27,7 +31,6 @@ Listener.prototype.on = function ()
 {
 	this.listener = this.__onInteraction.bind(this);
 
-    document.addEventListener('scroll', this.listener, true)
 	document.addEventListener('mouseenter', this.listener, true);
 	document.addEventListener('focus', this.listener, true);
 }

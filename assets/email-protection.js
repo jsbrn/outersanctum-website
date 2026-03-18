@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function ()
         const revealed = obfuscated.replace("apogee", "contact").replace(".", "@").replaceAll(" ", "").replace("sheep", "outersanctum").replace("!", ".").replace("com", "ca");
 		button.setAttribute("href", `mailto:${revealed}`);
         button.innerText = revealed
-        console.log(button, obfuscated, revealed)
 	}
 
 	listener.on();

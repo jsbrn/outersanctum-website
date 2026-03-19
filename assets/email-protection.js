@@ -2,8 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', function ()
 {
-	const listener = new Listener();
 
+    document.getElementById("no-js").remove()
+    
+	const listener = new Listener();
 	listener.decode = function ()
 	{
 

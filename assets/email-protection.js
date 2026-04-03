@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("no-js").remove();
-
     const listener = new Listener();
     listener.decode = function () {
         const button = document.getElementById("email-address");
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
         button.setAttribute("href", `mailto:${revealed}`);
         button.innerText = revealed;
     };
-
     listener.on();
 });
 
@@ -27,7 +25,6 @@ Listener.prototype.decode = null;
 
 Listener.prototype.on = function () {
     this.listener = this.__onInteraction.bind(this);
-
     document.addEventListener("mouseenter", this.listener, true);
     document.addEventListener("focus", this.listener, true);
 };
@@ -35,7 +32,6 @@ Listener.prototype.on = function () {
 Listener.prototype.off = function () {
     document.removeEventListener("mouseenter", this.listener, true);
     document.removeEventListener("focus", this.listener, true);
-
     delete this.listener;
 };
 
